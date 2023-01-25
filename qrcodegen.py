@@ -11,6 +11,7 @@ __status__ = "Development"
 
 import sys
 import qrcode
+from credentials import credentials
 
 background = (123, 198, 219)
 fill_color = (38, 24, 66)
@@ -36,7 +37,7 @@ def generate_qrcode(name, link, background=background, fill_color=fill_color):
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=50,
+        box_size=10,
         border=1
     )
     img = qr.add_data(link)
@@ -49,8 +50,12 @@ def generate_qrcode(name, link, background=background, fill_color=fill_color):
 
 if __name__ == '__main__':
     check_pythonversion()
-    for webname in weblinks:
-        generate_qrcode(webname, weblinks[webname])
 
-    for email in emails:
-        generate_qrcode(email, emails[email])        
+    c = credentials("name ")
+    c.firstname = "firstname"
+    c.lastname = "lastname"
+    c.birthday = "birthday"
+    c.address = "address"
+    c.cellphonenumber = "cellphonenumber"
+    c.homeemail = "homeemail"
+    generate_qrcode(c.name,c.vcard())
