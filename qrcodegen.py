@@ -2,7 +2,7 @@ __author__ = "Steven Geerts"
 __copyright__ = "Copyright 2023"
 __credits__ = []
 __license__ = "Unlicensed"
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 __maintainer__ = "Steven Geerts"
 __status__ = "Development"
 
